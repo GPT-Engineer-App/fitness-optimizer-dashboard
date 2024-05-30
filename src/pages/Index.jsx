@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { Container, VStack, HStack, Text, Progress, Box, IconButton, Heading, useColorMode, Button } from "@chakra-ui/react";
-import { FaDumbbell, FaUtensils, FaBed, FaClock, FaPills, FaSun, FaMoon } from "react-icons/fa";
+import { Container, VStack, HStack, Text, Progress, Box, Heading } from "@chakra-ui/react";
+import { FaDumbbell, FaUtensils, FaBed, FaClock, FaPills } from "react-icons/fa";
 
 const Index = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
   const [metrics, setMetrics] = useState({
     diet: 70,
     workoutFrequency: 80,
@@ -22,7 +21,6 @@ const Index = () => {
         </Heading>
         <HStack width="100%" justifyContent="space-between">
           <Text fontSize="2xl">Overall Efficiency: {overallEfficiency}%</Text>
-          <IconButton aria-label="Toggle dark mode" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} onClick={toggleColorMode} />
         </HStack>
         <Box width="100%">
           <HStack spacing={4} alignItems="center">
