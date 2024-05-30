@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Container, VStack, HStack, Text, Progress, Box, IconButton, Heading, Select } from "@chakra-ui/react";
-import { FaDumbbell, FaUtensils, FaBed, FaClock, FaPills } from "react-icons/fa";
+import { Container, VStack, HStack, Text, Progress, Box, IconButton, Heading, useColorMode, Button } from "@chakra-ui/react";
+import { FaDumbbell, FaUtensils, FaBed, FaClock, FaPills, FaSun, FaMoon } from "react-icons/fa";
 
 const Index = () => {
-  const [goal, setGoal] = useState("loseFat");
+  const { colorMode, toggleColorMode } = useColorMode();
   const [metrics, setMetrics] = useState({
     diet: 70,
     workoutFrequency: 80,
@@ -12,20 +12,18 @@ const Index = () => {
     supplements: 50,
   });
 
-  const handleGoalChange = (event) => {
-    setGoal(event.target.value);
-  };
+  const overallEfficiency = (metrics.diet + metrics.workoutFrequency + metrics.recoveryTime + metrics.sleep + metrics.supplements) / 5;
 
   return (
     <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={6} width="100%">
+      <VStack spacing={6} width="100%" alignItems="center">
         <Heading as="h1" size="xl" mb={4}>
           Fitness Journey Dashboard
         </Heading>
-        <Select value={goal} onChange={handleGoalChange} mb={4}>
-          <option value="loseFat">Lose Fat</option>
-          <option value="gainMuscle">Gain Muscle</option>
-        </Select>
+        <HStack width="100%" justifyContent="space-between">
+          <Text fontSize="2xl">Overall Efficiency: {overallEfficiency}%</Text>
+          <IconButton aria-label="Toggle dark mode" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} onClick={toggleColorMode} />
+        </HStack>
         <Box width="100%">
           <HStack spacing={4} alignItems="center">
             <FaUtensils size="24" />
