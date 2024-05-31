@@ -22,7 +22,7 @@ const Index = () => {
         <HStack width="100%" justifyContent="space-between">
           <Text fontSize="2xl">Overall Efficiency: {overallEfficiency}%</Text>
         </HStack>
-        <Box width="100%">
+        <Box width="100%" p={4} borderWidth="1px" borderRadius="lg" boxShadow="md">
           <HStack spacing={4} alignItems="center">
             <FaUtensils size="24" />
             <Text flex="1">Diet</Text>
@@ -30,7 +30,7 @@ const Index = () => {
             <Text>{metrics.diet}%</Text>
           </HStack>
         </Box>
-        <Box width="100%">
+        <Box width="100%" p={4} borderWidth="1px" borderRadius="lg" boxShadow="md">
           <HStack spacing={4} alignItems="center">
             <FaDumbbell size="24" />
             <Text flex="1">Workout Frequency</Text>
@@ -38,7 +38,7 @@ const Index = () => {
             <Text>{metrics.workoutFrequency}%</Text>
           </HStack>
         </Box>
-        <Box width="100%">
+        <Box width="100%" p={4} borderWidth="1px" borderRadius="lg" boxShadow="md">
           <HStack spacing={4} alignItems="center">
             <FaClock size="24" />
             <Text flex="1">Recovery Time</Text>
@@ -46,7 +46,7 @@ const Index = () => {
             <Text>{metrics.recoveryTime}%</Text>
           </HStack>
         </Box>
-        <Box width="100%">
+        <Box width="100%" p={4} borderWidth="1px" borderRadius="lg" boxShadow="md">
           <HStack spacing={4} alignItems="center">
             <FaBed size="24" />
             <Text flex="1">Sleep</Text>
@@ -54,7 +54,7 @@ const Index = () => {
             <Text>{metrics.sleep}%</Text>
           </HStack>
         </Box>
-        <Box width="100%">
+        <Box width="100%" p={4} borderWidth="1px" borderRadius="lg" boxShadow="md">
           <HStack spacing={4} alignItems="center">
             <FaPills size="24" />
             <Text flex="1">Supplements</Text>
